@@ -5,6 +5,7 @@ import Blog from "@/components/pages/blog";
 import Contact from "@/components/pages/contact";
 import Hero from "@/components/pages/hero";
 import Work from "@/components/pages/work";
+import { useState, useCallback } from "react";
 
 export default function Home() {
   return (

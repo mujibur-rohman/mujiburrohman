@@ -7,9 +7,11 @@ import {
 } from "@heroicons/react/24/solid";
 import React from "react";
 
-type Props = {};
+type Props = {
+  inSection?: string;
+};
 
-function MobileNavigation({}: Props) {
+function MobileNavigation({ inSection }: Props) {
   return (
     <div className="fixed flex items-center justify-between px-4 py-2 dark:text-neutral-100 md:hidden bottom-0 left-0 right-0 rounded-t-3xl dark:bg-neutral-500 border-t-[2px] border-neutral-400">
       <a

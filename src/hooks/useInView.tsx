@@ -1,13 +1,15 @@
-import { LegacyRef, RefObject, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-function useInView(options: IntersectionObserverInit | undefined) {
-  const [inView, setInView] = useState(false);
+function useInView(options?: IntersectionObserverInit | undefined) {
+  const [inView, setInView] = useState<string>("");
   const ref = useRef(null);
 
   useEffect(() => {
     const obs = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        setInView(entry.isIntersecting);
+        if (entry.isIntersecting) {
+          setInView(entry.target.id);
+        }
       });
     }, options);
 
