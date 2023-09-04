@@ -1,14 +1,17 @@
-import { useEffect, useRef, useState } from "react";
+import { SectionContext } from "@/context/section-provider";
+import { useContext, useEffect, useRef, useState } from "react";
 
 function useInView(options?: IntersectionObserverInit | undefined) {
   const [inView, setInView] = useState<string>("");
   const ref = useRef(null);
-
+  const { sectionHandler, section } = useContext(SectionContext);
   useEffect(() => {
     const obs = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setInView(entry.target.id);
+          sectionHandler(entry.target.id);
+          // console.log(entry.target.id);
         }
       });
     }, options);
