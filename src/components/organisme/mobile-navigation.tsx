@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import { CodeBracketIcon } from "@heroicons/react/24/outline";
 import {
   CubeIcon,
@@ -16,39 +17,83 @@ function MobileNavigation({ inSection }: Props) {
     <div className="fixed flex items-center justify-between px-4 py-2 dark:text-neutral-100 md:hidden bottom-0 left-0 right-0 rounded-t-3xl dark:bg-neutral-500 border-t-[2px] border-neutral-400">
       <a
         href="#home"
-        className="cursor-pointer p-3 text-primary-purple-300 rounded-full flex flex-col justify-center items-center gap-1"
+        className={cn(
+          "cursor-pointer p-3 rounded-full flex flex-col justify-center items-center gap-1",
+          {
+            ["border-primary-purple-400 text-primary-purple-300"]:
+              inSection === "home",
+          }
+        )}
       >
         <HomeIcon className="w-6 h-6" />
         <span className="text-sm">Home</span>
-        <hr className="border-b-2 border-primary-purple-400 w-full" />
+        {inSection === "home" && (
+          <hr className="border-b-2 border-inherit w-full" />
+        )}
       </a>
       <a
         href="#about"
-        className="cursor-pointer p-3 rounded-full flex flex-col justify-center items-center gap-1"
+        className={cn(
+          "cursor-pointer p-3 rounded-full flex flex-col justify-center items-center gap-1",
+          {
+            ["border-primary-purple-400 text-primary-purple-300"]:
+              inSection === "about",
+          }
+        )}
       >
         <CubeIcon className="w-6 h-6" />
         <span className="text-sm">About</span>
+        {inSection === "about" && (
+          <hr className="border-b-2 border-inherit w-full" />
+        )}
       </a>
       <a
         href="#work"
-        className="cursor-pointer p-3 rounded-full flex flex-col justify-center items-center gap-1"
+        className={cn(
+          "cursor-pointer p-3 rounded-full flex flex-col justify-center items-center gap-1",
+          {
+            ["border-primary-purple-400 text-primary-purple-300"]:
+              inSection === "work",
+          }
+        )}
       >
         <CodeBracketIcon className="w-6 h-6" />
         <span className="text-sm">Work</span>
+        {inSection === "work" && (
+          <hr className="border-b-2 border-inherit w-full" />
+        )}
       </a>
       <a
         href="#blog"
-        className="cursor-pointer p-3 rounded-full flex flex-col justify-center items-center gap-1"
+        className={cn(
+          "cursor-pointer p-3 rounded-full flex flex-col justify-center items-center gap-1",
+          {
+            ["border-primary-purple-400 text-primary-purple-300"]:
+              inSection === "blog",
+          }
+        )}
       >
         <DocumentTextIcon className="w-6 h-6" />
         <span className="text-sm">Blog</span>
+        {inSection === "blog" && (
+          <hr className="border-b-2 border-inherit w-full" />
+        )}
       </a>
       <a
         href="#contact"
-        className="cursor-pointer p-3 rounded-full flex flex-col justify-center items-center gap-1"
+        className={cn(
+          "cursor-pointer p-3 rounded-full flex flex-col justify-center items-center gap-1",
+          {
+            ["border-primary-purple-400 text-primary-purple-300"]:
+              inSection === "contact",
+          }
+        )}
       >
         <InboxIcon className="w-6 h-6" />
         <span className="text-sm">Contact</span>
+        {inSection === "contact" && (
+          <hr className="border-b-2 border-inherit w-full" />
+        )}
       </a>
     </div>
   );

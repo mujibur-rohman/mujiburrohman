@@ -1,10 +1,11 @@
 import useInView from "@/hooks/useInView";
 
-type Props = {};
+type Props = {
+  activeSection: string;
+};
 
-function Hero({}: Props) {
+function Hero({ activeSection }: Props) {
   const { ref, inView } = useInView({ threshold: 0.6 });
-
   return (
     <section
       ref={ref}

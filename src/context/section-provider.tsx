@@ -17,8 +17,6 @@ export const SectionContext = createContext<SectionType>({
 function SectionProvider({ children }: Props) {
   const [section, setSection] = useState<string>("");
 
-  console.log(section);
-
   const changeSection = useCallback(
     (section: string) => {
       setSection(section);

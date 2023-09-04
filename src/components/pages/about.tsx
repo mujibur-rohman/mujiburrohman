@@ -1,8 +1,10 @@
 import useInView from "@/hooks/useInView";
 
-type Props = {};
+type Props = {
+  activeSection: string;
+};
 
-function About({}: Props) {
+function About({ activeSection }: Props) {
   const { ref, inView } = useInView({ threshold: 0.6 });
 
   return (
