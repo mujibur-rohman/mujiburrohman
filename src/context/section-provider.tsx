@@ -17,12 +17,10 @@ export const SectionContext = createContext<SectionType>({
 function SectionProvider({ children }: Props) {
   const [section, setSection] = useState<string>("");
 
-  const changeSection = useCallback(
-    (section: string) => {
-      setSection(section);
-    },
-    [section]
-  );
+  const changeSection = useCallback((section: string) => {
+    setSection(section);
+  }, []);
+
   return (
     <SectionContext.Provider value={{ section, sectionHandler: changeSection }}>
       {children}

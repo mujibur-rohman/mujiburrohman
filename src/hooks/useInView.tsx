@@ -25,7 +25,7 @@ function useInView(options?: IntersectionObserverInit | undefined) {
         obs.unobserve(target);
       }
     };
-  }, [options, ref.current]);
+  }, []);
   return { ref, inView };
 }
 

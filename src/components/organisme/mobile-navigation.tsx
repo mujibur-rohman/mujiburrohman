@@ -6,7 +6,37 @@ import {
   InboxIcon,
   HomeIcon,
 } from "@heroicons/react/24/solid";
-import React from "react";
+import { motion } from "framer-motion";
+
+type Navigation = {
+  id: string;
+  name: string;
+  icon: React.ReactNode;
+};
+
+const menus: Navigation[] = [
+  { id: "home", name: "Home", icon: <HomeIcon className="w-6 h-6 relative" /> },
+  {
+    id: "about",
+    name: "About",
+    icon: <CubeIcon className="w-6 h-6 relative" />,
+  },
+  {
+    id: "work",
+    name: "Work",
+    icon: <CodeBracketIcon className="w-6 h-6 relative" />,
+  },
+  {
+    id: "blog",
+    name: "Blog",
+    icon: <DocumentTextIcon className="w-6 h-6 relative" />,
+  },
+  {
+    id: "contact",
+    name: "Contact",
+    icon: <InboxIcon className="w-6 h-6 relative" />,
+  },
+];
 
 type Props = {
   inSection?: string;
@@ -14,87 +44,27 @@ type Props = {
 
 function MobileNavigation({ inSection }: Props) {
   return (
-    <div className="fixed flex items-center justify-between px-4 py-2 dark:text-neutral-100 md:hidden bottom-0 left-0 right-0 rounded-t-3xl dark:bg-neutral-500 border-t-[2px] border-neutral-400">
-      <a
-        href="#home"
-        className={cn(
-          "cursor-pointer p-3 rounded-full flex flex-col justify-center items-center gap-1",
-          {
-            ["border-primary-purple-400 text-primary-purple-300"]:
-              inSection === "home",
-          }
-        )}
-      >
-        <HomeIcon className="w-6 h-6" />
-        <span className="text-sm">Home</span>
-        {inSection === "home" && (
-          <hr className="border-b-2 border-inherit w-full" />
-        )}
-      </a>
-      <a
-        href="#about"
-        className={cn(
-          "cursor-pointer p-3 rounded-full flex flex-col justify-center items-center gap-1",
-          {
-            ["border-primary-purple-400 text-primary-purple-300"]:
-              inSection === "about",
-          }
-        )}
-      >
-        <CubeIcon className="w-6 h-6" />
-        <span className="text-sm">About</span>
-        {inSection === "about" && (
-          <hr className="border-b-2 border-inherit w-full" />
-        )}
-      </a>
-      <a
-        href="#work"
-        className={cn(
-          "cursor-pointer p-3 rounded-full flex flex-col justify-center items-center gap-1",
-          {
-            ["border-primary-purple-400 text-primary-purple-300"]:
-              inSection === "work",
-          }
-        )}
-      >
-        <CodeBracketIcon className="w-6 h-6" />
-        <span className="text-sm">Work</span>
-        {inSection === "work" && (
-          <hr className="border-b-2 border-inherit w-full" />
-        )}
-      </a>
-      <a
-        href="#blog"
-        className={cn(
-          "cursor-pointer p-3 rounded-full flex flex-col justify-center items-center gap-1",
-          {
-            ["border-primary-purple-400 text-primary-purple-300"]:
-              inSection === "blog",
-          }
-        )}
-      >
-        <DocumentTextIcon className="w-6 h-6" />
-        <span className="text-sm">Blog</span>
-        {inSection === "blog" && (
-          <hr className="border-b-2 border-inherit w-full" />
-        )}
-      </a>
-      <a
-        href="#contact"
-        className={cn(
-          "cursor-pointer p-3 rounded-full flex flex-col justify-center items-center gap-1",
-          {
-            ["border-primary-purple-400 text-primary-purple-300"]:
-              inSection === "contact",
-          }
-        )}
-      >
-        <InboxIcon className="w-6 h-6" />
-        <span className="text-sm">Contact</span>
-        {inSection === "contact" && (
-          <hr className="border-b-2 border-inherit w-full" />
-        )}
-      </a>
+    <div className="fixed grid grid-cols-5 px-6 py-4 dark:text-neutral-100 md:hidden bottom-0 left-0 right-0 rounded-t-3xl dark:bg-neutral-500 border-t-[2px] border-neutral-400">
+      {menus.map((menu) => (
+        <div className="px-2  ">
+          <a
+            key={menu.id}
+            href={`#${menu.id}`}
+            className={cn(
+              "cursor-pointer rounded-xl relative py-2 flex flex-col justify-center items-center gap-1"
+            )}
+          >
+            {inSection === menu.id && (
+              <motion.div
+                layoutId="menus"
+                className="absolute rounded-xl inset-0 bg-primary-purple-400"
+              />
+            )}
+            {menu.icon}
+            <span className="text-sm relative">{menu.name}</span>
+          </a>
+        </div>
+      ))}
     </div>
   );
 }
