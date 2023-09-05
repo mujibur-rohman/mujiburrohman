@@ -8,9 +8,9 @@ function Work({}: Props) {
     <section
       ref={ref}
       id="work"
-      className="min-h-screen text-primary-purple-100 bg-white border-b-2 dark:bg-neutral-500"
+      className="min-h-screen flex justify-center items-center border-b-2"
     >
-      Work
+      <h1 className="text-2xl">Work</h1>
     </section>
   );
 }

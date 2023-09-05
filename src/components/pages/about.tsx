@@ -1,40 +1,17 @@
 import useInView from "@/hooks/useInView";
 
-type Props = {
-  activeSection: string;
-};
+type Props = {};
 
-function About({ activeSection }: Props) {
+function About({}: Props) {
   const { ref, inView } = useInView({ threshold: 0.6 });
 
   return (
     <section
       ref={ref}
       id="about"
-      className="min-h-screen text-primary-purple-100 bg-white border-b-2 dark:bg-neutral-500"
+      className="min-h-screen flex justify-center items-center border-b-2"
     >
-      <p>About</p>
-      <p>About</p>
-      <p>About</p>
-      <p>About</p>
-      <p>About</p>
-      <p>About</p>
-      <p>About</p>
-      <p>About</p>
-      <p>About</p>
-      <p>About</p>
-      <p>About</p>
-      <p>About</p>
-      <p>About</p>
-      <p>About</p>
-      <p>About</p>
-      <p>About</p>
-      <p>About</p>
-      <p>About</p>
-      <p>About</p>
-      <p>About</p>
-      <p>About</p>
-      <p>{inView ? "active" : "Nonaktif"}</p>
+      <h1 className="text-2xl">About</h1>
     </section>
   );
 }

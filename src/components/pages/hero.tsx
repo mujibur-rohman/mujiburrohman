@@ -10,27 +10,9 @@ function Hero({ activeSection }: Props) {
     <section
       ref={ref}
       id="home"
-      className="min-h-screen text-primary-purple-100 border-b-2"
+      className="min-h-screen flex justify-center items-center border-b-2"
     >
-      <p>Hero</p>
-      <p>Hero</p>
-      <p>Hero</p>
-      <p>Hero</p>
-      <p>Hero</p>
-      <p>Hero</p>
-      <p>Hero</p>
-      <p>Hero</p>
-      <p>Hero</p>
-      <p>Hero</p>
-      <p>Hero</p>
-      <p>Hero</p>
-      <p>Hero</p>
-      <p>Hero</p>
-      <p>Hero</p>
-      <p>Hero</p>
-      <p>Hero</p>
-      <p>Hero</p>
-      <p>{inView ? "active" : "Nonaktif"}</p>
+      <h1 className="text-2xl">Hero</h1>
     </section>
   );
 }

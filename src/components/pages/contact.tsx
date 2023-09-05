@@ -8,9 +8,9 @@ function Contact({}: Props) {
     <section
       ref={ref}
       id="contact"
-      className="min-h-screen text-primary-purple-100 bg-white border-b-2 dark:bg-neutral-500"
+      className="min-h-screen flex justify-center items-center border-b-2"
     >
-      Contact
+      <h1 className="text-2xl">Contact</h1>
     </section>
   );
 }
