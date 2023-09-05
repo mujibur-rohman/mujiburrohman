@@ -16,8 +16,8 @@ export default function Home() {
       <SwitchTheme className="fixed bottom-[7rem] left-5 md:hidden" />
       <MobileNavigation inSection={section} />
       <div className="bg-neutral-light-500 dark:bg-neutral-500 text-neutral-500 dark:text-primary-purple-100">
-        <Hero activeSection={section} />
-        <About activeSection={section} />
+        <Hero />
+        <About />
         <Work />
         <Blog />
         <Contact />
