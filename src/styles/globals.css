@@ -41,6 +41,6 @@
   left: 50%;
   bottom: -3rem;
   transform: translateX(-50%);
-  width: 1px;
+  width: 2px;
   height: 3rem;
 }

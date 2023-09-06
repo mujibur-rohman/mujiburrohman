@@ -12,10 +12,10 @@ export default function Home() {
   const { section } = useContext(SectionContext);
   console.log(section);
   return (
-    <main data-theme="d" className="relative">
+    <main className="relative">
       <SwitchTheme className="fixed bottom-[7rem] left-5 md:hidden" />
       <MobileNavigation inSection={section} />
-      <div className="bg-neutral-light-500 dark:bg-neutral-500 text-neutral-500 dark:text-primary-purple-100">
+      <div className="bg-neutral-light-500 transition-colors dark:bg-neutral-500 text-neutral-500 dark:text-primary-purple-100">
         <Hero />
         <About />
         <Work />

@@ -44,11 +44,10 @@ type Props = {
 
 function MobileNavigation({ inSection }: Props) {
   return (
-    <div className="fixed grid grid-cols-5 px-6 py-4 dark:text-neutral-100 md:hidden bottom-0 left-0 right-0 rounded-t-3xl backdrop-blur-md border-t-[2px] dark:border-neutral-400">
+    <div className="fixed grid grid-cols-5 px-2 py-4 dark:text-neutral-100 md:hidden bottom-0 left-0 right-0 rounded-t-3xl backdrop-blur-md border-t-[2px] dark:border-neutral-400">
       {menus.map((menu) => (
-        <div className="px-2  ">
+        <div className="px-2" key={menu.id}>
           <a
-            key={menu.id}
             href={`#${menu.id}`}
             className={cn(
               "cursor-pointer transition-colors duration-500 rounded-xl relative py-2 flex flex-col justify-center items-center gap-1",

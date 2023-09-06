@@ -1,7 +1,7 @@
 import { SectionContext } from "@/context/section-provider";
 import { useContext, useEffect, useRef, useState } from "react";
 
-function useInView(options?: IntersectionObserverInit | undefined) {
+function useInView(options?: IntersectionObserverInit) {
   const [inView, setInView] = useState<string>("");
   const ref = useRef(null);
   const { sectionHandler } = useContext(SectionContext);
