@@ -38,15 +38,15 @@ type Props = {
   inSection?: string;
 };
 
-function MobileNavigation({ inSection }: Props) {
+function DesktopNavigation({ inSection }: Props) {
   return (
-    <div className="fixed grid grid-cols-4 px-2 py-4 dark:text-neutral-100 md:hidden bottom-0 left-0 right-0 rounded-t-3xl backdrop-blur-md border-t-[2px] dark:border-neutral-400">
+    <div className="fixed px-1 py-4 dark:text-neutral-100 hidden md:flex flex-col gap-7 left-0 top-[50%] -translate-y-[50%] rounded-r-2xl backdrop-blur-md border-r-[1px] border-t-[1px] border-b-[1px] dark:border-neutral-400">
       {menus.map((menu) => (
         <div className="px-2" key={menu.id}>
           <a
             href={`#${menu.id}`}
             className={cn(
-              "cursor-pointer transition-colors duration-500 rounded-xl relative py-2 flex flex-col justify-center items-center gap-1",
+              "cursor-pointer transition-colors duration-500 rounded-xl relative flex flex-col justify-center items-center gap-1",
               {
                 ["text-white"]: inSection === menu.id,
               }
@@ -54,12 +54,11 @@ function MobileNavigation({ inSection }: Props) {
           >
             {inSection === menu.id && (
               <motion.div
-                layoutId="menu-mobile"
+                layoutId="menu-desktop"
                 className="absolute rounded-xl inset-0 bg-primary-purple-400"
               />
             )}
-            {menu.icon}
-            <span className="text-sm relative">{menu.name}</span>
+            <div className="h-3 bg-neutral-100 dark:bg-neutral-400 rounded-md w-10" />
           </a>
         </div>
       ))}
@@ -67,4 +66,4 @@ function MobileNavigation({ inSection }: Props) {
   );
 }
 
-export default MobileNavigation;
+export default DesktopNavigation;
