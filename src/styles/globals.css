@@ -4,6 +4,11 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary-color-purple: #7000ff;
+  --primary-color-blue: #0469ff;
+}
+
 * {
   font-family: "DM Sans", sans-serif;
   scroll-behavior: smooth;
@@ -17,21 +22,18 @@
   Border Gradient
 */
 
-.border-gradient {
-  @apply dark:bg-neutral-500 relative p-7 box-border bg-clip-padding border-2 border-transparent;
+[data-theme="dark"] .border-gradient {
+  border: 1px solid;
+  border-image: linear-gradient(
+      45deg,
+      var(--primary-color-blue),
+      var(--primary-color-purple)
+    )
+    1;
 }
 
-.border-gradient::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  border-radius: inherit;
-  margin: 2px;
-  background-color: aqua;
+[data-theme="light"] .border-gradient {
+  @apply border-[1px] border-neutral-100;
 }
 
 /* 
