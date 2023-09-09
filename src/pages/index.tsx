@@ -18,7 +18,7 @@ export default function Home() {
       <DesktopNavigation inSection={section} />
       <div
         id="layout"
-        className="bg-neutral-light-500 transition-colors dark:bg-neutral-500 text-neutral-500 dark:text-primary-purple-100"
+        className="bg-neutral-light-500 transition-colors dark:bg-neutral-500 text-neutral-500 dark:text-primary-purple-100 px-10 md:px-20"
       >
         <Hero />
         <About />
