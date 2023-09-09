@@ -12,7 +12,7 @@ import { useContext } from "react";
 export default function Home() {
   const { section } = useContext(SectionContext);
   return (
-    <main className="relative">
+    <main className="relative overflow-x-hidden">
       <SwitchTheme className="fixed md:fixed bottom-[7rem] md:bottom-7 left-5 md:left-auto md:right-10" />
       <MobileNavigation inSection={section} />
       <DesktopNavigation inSection={section} />

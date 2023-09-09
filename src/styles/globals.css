@@ -23,17 +23,27 @@
 */
 
 [data-theme="dark"] .border-gradient {
-  border: 1px solid;
-  border-image: linear-gradient(
-      45deg,
-      var(--primary-color-blue),
-      var(--primary-color-purple)
-    )
-    1;
+  position: relative;
+}
+
+[data-theme="dark"] .border-gradient::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50px;
+  padding: 2px;
+  background: linear-gradient(
+    45deg,
+    var(--primary-color-blue),
+    var(--primary-color-purple)
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
 }
 
 [data-theme="light"] .border-gradient {
-  @apply border-[1px] border-neutral-100;
+  @apply border-[2px]  border-blue-500;
 }
 
 /* 

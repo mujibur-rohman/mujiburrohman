@@ -40,7 +40,7 @@ type Props = {
 
 function MobileNavigation({ inSection }: Props) {
   return (
-    <div className="fixed grid grid-cols-4 px-2 py-4 dark:text-neutral-100 md:hidden bottom-0 left-0 right-0 rounded-t-3xl backdrop-blur-md border-t-[2px] dark:border-neutral-400">
+    <div className="fixed z-[2] grid grid-cols-4 px-2 py-4 dark:text-neutral-100 md:hidden bottom-0 left-0 right-0 rounded-t-3xl backdrop-blur-md border-t-[2px] dark:border-neutral-400">
       {menus.map((menu) => (
         <div className="px-2" key={menu.id}>
           <a

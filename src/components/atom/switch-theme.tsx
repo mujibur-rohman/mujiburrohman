@@ -34,7 +34,7 @@ function SwitchTheme({ className }: Props) {
         onClick={handleThemeClick}
         animate={controls}
         className={cn(
-          "switch-theme-mobile dark:text-neutral-100 bg-white transition-colors p-2 rounded-full cursor-pointer border-[2px] hover:dark:bg-neutral-700 dark:bg-neutral-600 shadow-lg shadow-neutral-100/5 dark:border-neutral-400",
+          "switch-theme-mobile z-[1] dark:text-neutral-100 bg-white transition-colors p-2 rounded-full cursor-pointer border-[2px] hover:dark:bg-neutral-700 dark:bg-neutral-600 shadow-lg shadow-neutral-100/5 dark:border-neutral-400",
           className
         )}
       >

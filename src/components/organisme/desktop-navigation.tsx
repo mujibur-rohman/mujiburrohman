@@ -40,7 +40,7 @@ type Props = {
 
 function DesktopNavigation({ inSection }: Props) {
   return (
-    <div className="fixed px-1 py-4 dark:text-neutral-100 hidden md:flex flex-col gap-7 left-0 top-[50%] -translate-y-[50%] rounded-r-2xl backdrop-blur-md border-r-[1px] border-t-[1px] border-b-[1px] dark:border-neutral-400">
+    <div className="fixed z-[2] px-1 py-4 dark:text-neutral-100 hidden md:flex flex-col gap-7 left-0 top-[50%] -translate-y-[50%] rounded-r-2xl backdrop-blur-md border-r-[1px] border-t-[1px] border-b-[1px] dark:border-neutral-400">
       {menus.map((menu) => (
         <div className="px-2" key={menu.id}>
           <a
