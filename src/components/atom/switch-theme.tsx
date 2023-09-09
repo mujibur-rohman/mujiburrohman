@@ -17,7 +17,7 @@ function SwitchTheme({ className }: Props) {
 
   const handleThemeClick = async () => {
     await controls.start({ y: -10, transition: { duration: 0.2 } });
-    await controls.start({ y: 100, transition: { duration: 0.5 } });
+    await controls.start({ y: 70, transition: { duration: 0.5 } });
     setTheme(theme === "light" ? "dark" : "light");
     await controls.start({ y: -10, transition: { duration: 0.5 } });
     await controls.start({ y: 0, transition: { duration: 0.2 } });

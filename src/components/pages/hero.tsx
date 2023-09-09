@@ -18,11 +18,12 @@ const transition = (delay?: number) => ({
 
 function Hero({}: Props) {
   const { ref } = useInView({ threshold: 0.6 });
+
   return (
     <section
       ref={ref}
       id="home"
-      className="relative min-h-screen flex justify-center items-center"
+      className="relative min-h-screen flex justify-center items-center px-10 md:px-[7rem]"
     >
       <div className="absolute -right-10 -top-10 w-[10rem] h-[10rem] blur-[10rem] bg-primary-purple-400" />
       <div className="relative flex flex-col gap-3 items-start font-bold">
@@ -103,6 +104,12 @@ function Hero({}: Props) {
             <InstagramIcon className="text-blue-500 dark:text-purple-100" />
           </motion.div>
         </motion.div>
+      </div>
+      <div className="absolute w-full flex bottom-0 py-4 justify-center md:justify-between px-10 md:px-[10rem]">
+        <p className="text-sm">
+          &copy; Mujiburrohman {new Date().getFullYear()}
+        </p>
+        <p className="text-sm hidden md:block">Last visit from Indonesia</p>
       </div>
     </section>
   );
