@@ -119,15 +119,17 @@ function About({}: Props) {
           variants={zoomIn}
           initial="offscreen"
           whileInView="onscreen"
+          viewport={{ once: true }}
           className="text-[1.75rem] md:text-[2rem] font-bold"
         >
           About
         </motion.h1>
         <div className="mt-5">
           <motion.p
-            variants={zoomIn}
+            variants={rightToLeft}
             initial="offscreen"
             whileInView="onscreen"
+            viewport={{ once: true }}
             className="leading-7"
           >
             A Developer who loves to build things from scratch and give them
@@ -138,9 +140,10 @@ function About({}: Props) {
             solve real-world problems.
           </motion.p>
           <motion.p
-            variants={zoomIn}
+            variants={leftToRight}
             initial="offscreen"
             whileInView="onscreen"
+            viewport={{ once: true }}
             className="mt-3 leading-7"
           >
             I have completed my{" "}
@@ -165,6 +168,7 @@ function About({}: Props) {
           variants={zoomIn}
           initial="offscreen"
           whileInView="onscreen"
+          viewport={{ once: true }}
           className="border-gradient cursor-pointer text-primary-blue-400 mt-5 w-fit px-4 py-2 flex gap-2 rounded-full font-medium"
         >
           <span>
@@ -246,6 +250,35 @@ function About({}: Props) {
             </div>
           ))}
         </motion.div>
+      </motion.div>
+      <motion.div
+        variants={zoomIn}
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true }}
+        className="px-10 md:px-[7rem] mt-16"
+      >
+        <div className="relative flex flex-col md:flex-row gap-3 md:gap-2 justify-around backdrop-blur-lg p-5 bg-neutral-light-500 dark:bg-neutral-500/60 border-[1px] border-neutral-light-600 dark:border-neutral-200 rounded-md">
+          <div className="absolute left-[50%] -z-10 translate-x-[-50%] w-full h-full blur-3xl bg-primary-purple-400/20" />
+          <div className="flex justify-center items-center gap-3">
+            <div className="text-[3rem] md:text-[4rem] font-bold flex items-center">
+              <span>{new Date().getFullYear() - 2021}</span>
+              <span className="text-primary-blue-500">+</span>
+            </div>
+            <span className="text-xl md:text-3xl font-bold flex flex-col">
+              <span>Years of</span> <span>Experience</span>
+            </span>
+          </div>
+          <div className="flex justify-center items-center gap-3">
+            <div className="text-[3rem] md:text-[4rem] font-bold flex items-center">
+              <span>10</span>
+              <span className="text-primary-blue-500">+</span>
+            </div>
+            <span className="text-xl md:text-3xl font-bold flex flex-col">
+              <span>Projects</span> <span>Completed</span>
+            </span>
+          </div>
+        </div>
       </motion.div>
     </section>
   );

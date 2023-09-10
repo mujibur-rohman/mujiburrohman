@@ -12,7 +12,7 @@ export default function Home() {
   const { section } = useContext(SectionContext);
   return (
     <main className="relative overflow-x-hidden">
-      <SwitchTheme className="fixed md:fixed bottom-[7rem] left-5 md:bottom-auto md:top-10 md:left-[7rem]" />
+      <SwitchTheme className="fixed md:fixed bottom-[7rem] left-5 md:bottom-auto md:top-10 md:left-auto md:right-[7rem]" />
       <MobileNavigation inSection={section} />
       <DesktopNavigation inSection={section} />
       <div
