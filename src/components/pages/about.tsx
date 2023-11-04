@@ -2,7 +2,6 @@ import useInView from "@/hooks/useInView";
 import { DownloadIcon } from "lucide-react";
 import { motion } from "framer-motion";
 import {
-  bottomToTop,
   leftToRight,
   opacity,
   rightToLeft,
@@ -135,7 +134,7 @@ function About({}: Props) {
             A Developer who loves to build things from scratch and give them
             life or add some features to outdated or existing applications and
             make them shine again, focused on creating cutting-edge, elegant,
-            and accessible user experiences. I'm passionate about the web, quite
+            and accessible user experiences. Im passionate about the web, quite
             curious and enjoy learning every day and taking responsibility to
             solve real-world problems.
           </motion.p>
@@ -155,11 +154,11 @@ function About({}: Props) {
             <span className="text-primary-blue-400 font-semibold">
               Front End Developer
             </span>{" "}
-            from the last {new Date().getFullYear() - 2021} years, I've started
-            my journey back in 2021, When I started learning and exploring
+            from the last {new Date().getFullYear() - 2021} years, I started my
+            journey back in 2021, When I started learning and exploring
             Javascript and HTML/CSS. My initial focus was on Javascript, Later I
             moved forward to explore ReactJs. Apart from working with Front-end
-            Technologies, I've decided to become a Full-Stack developer so I've
+            Technologies, I decided to become a Full-Stack developer so I
             started combining frontend with Node.js, Express, MySQL, and
             MongoDB.
           </motion.p>
