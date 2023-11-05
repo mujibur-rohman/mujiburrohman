@@ -1,6 +1,7 @@
 import useInView from "@/hooks/useInView";
 import { motion } from "framer-motion";
 import { GithubIcon, LinkedinIcon, InstagramIcon } from "lucide-react";
+import { useRouter } from "next/router";
 
 type Props = {};
 
@@ -18,6 +19,7 @@ const transition = (delay?: number) => ({
 
 function Hero({}: Props) {
   const { ref } = useInView({ threshold: 0.6 });
+  const router = useRouter();
 
   return (
     <section
@@ -58,7 +60,7 @@ function Hero({}: Props) {
             transition={transition(0.5)}
             className="text-[2rem] md:text-[2.5rem]"
           >
-            I'm{" "}
+            I&apos;m{" "}
             <span className="relative before:right-0 before:bottom-1 before:content-[''] before:block before:absolute before:w-[50%] before:h-3 before:bg-primary-blue-300 dark:before:bg-primary-blue-500">
               <motion.span className="relative">Mujiburrohman</motion.span>
             </span>
@@ -86,18 +88,27 @@ function Hero({}: Props) {
           className="flex gap-2 mt-2"
         >
           <motion.div
+            onClick={() => {
+              router.push("https://github.com/mujibur-rohman");
+            }}
             whileTap={{ scale: 1.1 }}
             className="border-gradient cursor-pointer inline-block rounded-full p-2 dark:p-3 md:p-4 dark:md:p-[1.15rem] transition-colors hover:bg-blue-500/30"
           >
             <GithubIcon className="text-blue-500 dark:text-purple-100" />
           </motion.div>
           <motion.div
+            onClick={() => {
+              router.push("https://www.linkedin.com/in/muji-burrohman/");
+            }}
             whileTap={{ scale: 1.1 }}
             className="border-gradient cursor-pointer inline-block rounded-full p-2 dark:p-3 md:p-4 dark:md:p-[1.15rem] transition-colors hover:bg-blue-500/30"
           >
             <LinkedinIcon className="text-blue-500 dark:text-purple-100 " />
           </motion.div>
           <motion.div
+            onClick={() => {
+              router.push("https://www.instagram.com/mujiburrrrrr/");
+            }}
             whileTap={{ scale: 1.1 }}
             className="border-gradient cursor-pointer inline-block rounded-full p-2 dark:p-3 md:p-4 dark:md:p-[1.15rem] transition-colors hover:bg-blue-500/30"
           >

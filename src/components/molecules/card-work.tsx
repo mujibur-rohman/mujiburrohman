@@ -4,6 +4,7 @@ import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { bottomToTop } from "@/services/constant/animate";
+import Image from "next/image";
 
 function CardWork({
   title,
@@ -33,9 +34,15 @@ function CardWork({
       className="mt-5 flex flex-col lg:flex-row overflow-hidden h-full rounded-xl border bg-neutral-light-500 dark:bg-neutral-500 dark:border-neutral-400/30"
     >
       <div className="overflow-hidden h-[50%] lg:h-auto lg:w-[50%]">
-        <img
+        <Image
+          sizes="100vw"
+          style={{
+            width: "100%",
+          }}
           src={coverImg}
           alt="cover"
+          width={500}
+          height={300}
           className="object-cover hover:scale-110 transition-transform h-full object-left"
         />
       </div>
@@ -43,13 +50,13 @@ function CardWork({
         <div>
           <div className="flex justify-between items-center mb-5">
             <h1 className="text-2xl dark:text-white font-bold">{title}</h1>
-            <Link href={pathWebsite}>
+            <Link href={pathWebsite} aria-label="Visit website">
               <ArrowTopRightOnSquareIcon className="w-8 cursor-pointer" />
             </Link>
           </div>
           <p className="text-justify lg:text-xl">{description}</p>
         </div>
-        <div className="flex justify-between">
+        <div className="flex flex-col items-start gap-8">
           <div className="flex gap-5 items-center">
             {techStack.map((tech, i) => (
               <img
@@ -64,6 +71,7 @@ function CardWork({
           </div>
           <Link
             href={pathGithub}
+            aria-label="Visit github"
             className="flex justify-between items-center gap-2 cursor-pointer transition-colors hover:bg-gray-200 bg-white text-neutral-500 font-semibold px-2 py-1 rounded-md border dark:border-none"
           >
             Source Code{" "}
