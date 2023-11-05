@@ -5,7 +5,7 @@ import CardWork from "../molecules/card-work";
 type Props = {};
 
 function Work({}: Props) {
-  const { ref } = useInView({ threshold: 0.6 });
+  const { ref } = useInView({ threshold: 0.2 });
   return (
     <section ref={ref} id="work" className="min-h-screen py-20">
       <div className="px-10 lg:px-[7rem] flex flex-col">
