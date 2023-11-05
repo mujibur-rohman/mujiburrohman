@@ -107,9 +107,7 @@ const listSkills = {
   ],
 };
 
-type Props = {};
-
-function About({}: Props) {
+function About() {
   const { ref } = useInView({ threshold: 0.6 });
   return (
     <section ref={ref} id="about" className="min-h-screen py-20">
@@ -239,6 +237,7 @@ function About({}: Props) {
         <motion.div
           initial={{ x: "-100%" }}
           animate={{ translateX: "100%" }}
+          viewport={{ once: true }}
           transition={{ duration: 30, repeat: Infinity, repeatType: "mirror" }}
           className="flex gap-20"
         >
